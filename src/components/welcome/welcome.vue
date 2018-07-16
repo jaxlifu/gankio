@@ -12,11 +12,13 @@
 
 <script>
 import { saveToLocal } from '../../common/js/store'
+console.log('welcome script run ')
 export default {
   created () {
     console.log('create')
   },
   mounted () {
+    console.log('welcome script run ')
     setTimeout(() => {
       this.$router.push({
         name: 'welfare'

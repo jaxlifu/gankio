@@ -10,6 +10,7 @@ const state = {
   'headerTitle': '福利',
   'menus': uz.TITLE_NAME,
   'menuShow': false,
+  'loadingShow': false,
   'news': 5
 }
 

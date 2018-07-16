@@ -32,6 +32,8 @@ const routerApp = new Vue({
 
 if (!loadFromLocal('gank', 'welcome', false)) {
   router.push('/welcome')
+} else {
+  router.push('/welfare')
 }
 
 export default routerApp

@@ -35,7 +35,7 @@ export default {
 
   methods: {
     isShow () {
-      this.$store.commit('UPDATA_MENUSHOW')
+      this.$store.commit('UPDATE_MENUSHOW')
     },
 
     hideDetail () {

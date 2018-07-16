@@ -22,8 +22,9 @@ export default {
 
   created () {
     this.$store.commit('UPDATE_LOADING', true)
-    this.$http.get('http://gank.io/history/content/5/1').then((response) => {
+    this.$http.get('http://gank.io/api/history/content/5/1').then((response) => {
       this.swiperSlides = response.body.results
+      console.log(this.swiperSlides)
       this.$nextTick(() => {
         this.$store.commit('UPDATE_LOADING', false)
       })

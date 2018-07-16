@@ -2,13 +2,13 @@
     <div class="welfare-wrapper" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
         <div class="welfare-center">
             <figure v-show="leftData.length > 0" v-for="(data, index) in leftData" :key="index"
-                @click="selectDetails(data.createAt)" >
+                @click="selectDetails(data.createdAt)" >
                 <v-img :imgUrl="data.url"></v-img>
             </figure>
         </div>
         <div class="welfare-center">
-            <figure v-show="right.length > 0" v-for="(data, index) in right" :key="index"
-                @click="selectDetails(data.createAt)" >
+            <figure v-show="rightData.length > 0" v-for="(data, index) in rightData" :key="index"
+                @click="selectDetails(data.createdAt)" >
                 <v-img :imgUrl="data.url"></v-img>
             </figure>
         </div>
@@ -71,8 +71,9 @@ export default {
 
     selectDetails (time) {
       this.time = time
-      this.$store.commit('UPDATE_LODING', true)
+      this.$store.commit('UPDATE_LOADING', true)
       let object = objectDate(this.time)
+      console.log(object)
       this.$http.get(`http://gank.io/api/history/content/day/${object.Y}/${object.M}/${object.D}`).then((response) => {
         let data = response.body.results
         this.detailsData = data[0]

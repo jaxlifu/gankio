@@ -1,5 +1,5 @@
 <template>
-    <v-list :type="'IOS'"></v-list>
+    <v-list :type="'iOS'"></v-list>
 </template>
 
 <script>

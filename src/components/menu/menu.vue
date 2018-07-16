@@ -1,27 +1,26 @@
 <template>
 <div class="menu">
     <div class="menu-list" :class="{'show':show}">
-        <div class="menu-avatar" src="https://avatars0.githubusercontent.com/u/11735533?v=3&amp;u=02b515725d0e52cdf5f02e2dbdc98c1de3ddbcc2&amp;s=400"
-          alt=""></div>
-
+      <div class="menu-header">
+        <img class="menu-avatar" src="https://avatars0.githubusercontent.com/u/11735533?v=3&amp;u=02b515725d0e52cdf5f02e2dbdc98c1de3ddbcc2&amp;s=400"
+          alt="">
         <div class="menu-title">Jax</div>
-
-    </div>
-
+      </div>
     <div class="menu-ul">
-        <div v-for="(menu, index) in menus" :key="index" @click="updateHeader(MENU_CONVERT[menu],menu)"></div>
+      <div v-for="(menu, index) in menus" :key="index" @click="updateHeader(MENU_CONVERT[menu],menu)">
         <router-link class="icon-quanbu iconfont item border-1px" :to="menu">
-            <div class="menu-icon">
-                <i class="iconfont" :class="'icon-'+menu"></i>
-            </div>
-            <span class="menu-text">{{MENU_CONVERT[menu]}}</span>
-            <div class="menu-new" v-show="menu==='day' && news>0">
-                <span>5</span>
-            </div>
+          <div class="menu-icon">
+            <i class="iconfont" :class="'icon-'+menu"></i>
+          </div>
+          <span class="menu-text">{{MENU_CONVERT[menu]}}</span>
+          <div class="menu-new" v-show="menu==='day' && news>0">
+            <span>5</span>
+          </div>
         </router-link>
+        </div>
+      </div>
     </div>
-    <div class="menu-other">
-    </div>
+    <div class="menu-other"></div>
 </div>
 </template>
 
